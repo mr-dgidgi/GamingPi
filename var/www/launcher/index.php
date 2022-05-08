@@ -23,6 +23,10 @@
 
 <body>
 <div id="MainDiv">
+        <!-- il you want to disable an icon on the launcherjust comment the matching block -->
+
+
+        <!-- Block Steamlink -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
                         <a onclick="LaunchSteamlink();">
@@ -30,6 +34,10 @@
                         </a>
                 </div>
         </div>
+        <!-- end of Block Steamlink -->
+
+
+        <!-- Block Retropie -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
                         <a onclick="LaunchRetropie();">
@@ -37,6 +45,9 @@
                         </a>
                 </div>
         </div>
+        <!-- end of Block Retropie -->
+
+        <!-- Block Kodi -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
                         <a onclick="LaunchKodi();">
@@ -44,6 +55,7 @@
                         </a>
                 </div>
         </div>
+        <!-- end of Block Kodi -->
 </div>
 
 </body>
