@@ -15,6 +15,9 @@
         function LaunchRetropie(){
                 window.location='app://emulationstation';
         }
+        function LaunchKodi(){
+                window.location='app://kodi';
+        }
 </script>
 
 
@@ -31,6 +34,13 @@
                 <div class="LogoDivDynamic">
                         <a onclick="LaunchRetropie();">
                                 <img src="retropie-logo.png" alt="Retropie" class="Logo">
+                        </a>
+                </div>
+        </div>
+        <div class="LogoDiv">
+                <div class="LogoDivDynamic">
+                        <a onclick="LaunchKodi();">
+                                <img src="kodi-logo.png" alt="Kodi" class="Logo">
                         </a>
                 </div>
         </div>
