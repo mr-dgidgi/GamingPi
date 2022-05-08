@@ -1,3 +1,4 @@
+#!/bin/bash/
 ######################################
 #
 #  GamingPi installer
@@ -27,6 +28,9 @@ InstallRetropie() {
         cd ~
         git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git ~/RetroPie-Setup
         bash ~/RetroPie-Setup/retropie_setup.sh
+        sudo cp bin/retropie /bin/retropie
+        sudo chmod a+x /bin/retropie
+
 }
 
 InstallKodi() {
@@ -44,7 +48,7 @@ InstallWebInterface () {
 }
 
 EnableAutoStart () {
-        echo '@chromium --start-fullscreen --start-maximized https://localhost/' >> /etc/xdg/lxsession/LXDE-pi/autostart
+        echo '@chromium --start-fullscreen --start-maximized http://localhost/' >> /etc/xdg/lxsession/LXDE-pi/autostart
 }
 
 AddAppSupport () {
