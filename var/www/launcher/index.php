@@ -13,7 +13,7 @@
                 window.location='app://steamlink';
         }
         function LaunchRetropie(){
-                window.location='app://emulationstation';
+                window.location='app://retropie';
         }
         function LaunchKodi(){
                 window.location='app://kodi';
