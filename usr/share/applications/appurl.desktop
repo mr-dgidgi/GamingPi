@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=TerminalURL
-Exec=/home/radu/bin/open_app.sh %u
+Exec=/home/pi/bin/open_app.sh %u
 Type=Application
 NoDisplay=true
 Categories=System;
