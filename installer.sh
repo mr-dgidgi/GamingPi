@@ -24,9 +24,9 @@ InstallSteamlink() {
 }
 
 InstallRetropie() {
-        cd ~
+        cd ~/GamingPi
         git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git ~/RetroPie-Setup
-        bash ~/RetroPie-Setup/retropie_setup.sh
+        sudo bash ~/RetroPie-Setup/retropie_setup.sh
         sudo cp bin/retropie /bin/retropie
         sudo chmod a+x /bin/retropie
 
@@ -37,17 +37,20 @@ InstallKodi() {
 }
 
 InstallWebInterface () {
-        sudo apt install apache2 -y
-        sudo cp  etc/apache2/sites-available/launcher.conf /etc/apache2/sites-available/launcher.conf
+        cd ~/GamingPi
+        sudo apt install apache2 php7.2 -y
+        sudo cp -r etc/apache2/sites-available/launcher.conf /etc/apache2/sites-available/launcher.conf
         sudo chown www-data:www-data /etc/apache2/sites-available/launcher.conf
-        sudo cp var/www/* /var/www/
+        sudo cp -r var/www/* /var/www/
         sudo chown -R www-data:www-data /var/www/launcher/
         sudo a2ensite launcher.conf
         sudo systemctl reload apache2
 }
 
 EnableAutoStart () {
-        echo '@chromium --start-fullscreen --start-maximized http://localhost/' >> /etc/xdg/lxsession/LXDE-pi/autostart
+        sudo chmod 666 /etc/xdg/lxsession/LXDE-pi/autostart
+        sudo echo '@chromium --start-fullscreen --start-maximized http://localhost/' >> /etc/xdg/lxsession/LXDE-pi/autostart
+        sudo chmod 644 /etc/xdg/lxsession/LXDE-pi/autostart
 }
 
 AddAppSupport () {
@@ -71,7 +74,7 @@ InstallCEC () {
         echo "#!/bin/bash" > /home/pi/CEC/cec-tv-start.sh
         echo "echo 'standby 0.0.0.0' | cec-client -s -d 3" >> /home/pi/CEC/cec-tv-start.sh
         chmod +x /home/pi/CEC/cec-tv-start.sh
-        echo "@reboot /home/pi/CEC/cec-tv-start.sh" > /etc/cron.d/cec
+        sudo bash -c 'echo "@reboot /home/pi/CEC/cec-tv-start.sh" > /etc/cron.d/cec'
 
 }
 
