@@ -7,7 +7,6 @@
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <link rel="stylesheet" href="index.css">
 </head>
-
 <script>
         function LaunchSteamlink(){
                 window.location='app://steamlink';
@@ -18,14 +17,19 @@
         function LaunchKodi(){
                 window.location='app://kodi';
         }
+        function SystemReboot(){
+                window.location='app://reboot';
+        }
+        function SystemStop(){
+                window.location='app://shutdown';
+        }
 </script>
-
-
 <body>
-<div id="MainDiv">
+
+<div id="overlay"></div>
+
+<div tabindex="0" id="MainDiv">
         <!-- il you want to disable an icon on the launcherjust comment the matching block -->
-
-
         <!-- Block Steamlink -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
@@ -35,8 +39,6 @@
                 </div>
         </div>
         <!-- end of Block Steamlink -->
-
-
         <!-- Block Retropie -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
@@ -46,7 +48,6 @@
                 </div>
         </div>
         <!-- end of Block Retropie -->
-
         <!-- Block Kodi -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
@@ -57,7 +58,21 @@
         </div>
         <!-- end of Block Kodi -->
 </div>
-
+<div tabindex="1" id="SystemMenu">
+        <div class="LogoDiv">
+                <div class="SystemDivDynamic">
+                        <a onclick="SystemReboot();">
+                                <img src="restart-logo.png" alt="Reboot" class="Logo">
+                        </a>
+                </div>
+        </div>
+        <div class="LogoDiv">
+                <div class="SystemDivDynamic">
+                        <a onclick="SystemStop();">
+                                <img src="stop-logo.png" alt="Stop" class="Logo">
+                        </a>
+                </div>
+        </div>
+</div>
 </body>
-
 </html>
