@@ -1,4 +1,3 @@
-#!/bin/bash/
 ######################################
 #
 #  GamingPi installer
@@ -66,6 +65,20 @@ CheckUser () {
         fi
 }
 
+InstallCEC () {
+        sudo apt install cec-utils
+        mkdir /home/pi/CEC
+        echo "#!/bin/bash" > /home/pi/CEC/cec-tv-start.sh
+        echo "echo 'standby 0.0.0.0' | cec-client -s -d 3" >> /home/pi/CEC/cec-tv-start.sh
+        chmod +x /home/pi/CEC/cec-tv-start.sh
+        echo "@reboot /home/pi/CEC/cec-tv-start.sh" > /etc/cron.d/cec
+
+}
+
+InstallGamepadToMouse () {
+        sudo apt install xserver-xorg-input-joystick
+}
+
 
 CheckUser
 UpdateSystem
@@ -75,3 +88,5 @@ InstallKodi
 InstallWebInterface
 EnableAutoStart
 AddAppSupport
+InstallCEC
+InstallGamepadToMouse
