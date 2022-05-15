@@ -44,6 +44,7 @@ InstallWebInterface () {
         sudo cp -r var/www/* /var/www/
         sudo chown -R www-data:www-data /var/www/launcher/
         sudo a2ensite launcher.conf
+        sudo a2dissite 000-default.conf
         sudo systemctl reload apache2
 }
 
