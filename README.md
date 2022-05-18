@@ -11,7 +11,7 @@ Bulleye is not fully supported actually by Steamlink and RetroPi
 
 * Use OSOL tu launch game from other launchers than steam and make them available in steamlink : https://github.com/WombatFromHell/OriginSteamOverlayLauncher/wiki
 
-* Support of HDMI CEC partially working. Actually the GamingPi can start the TV but I wasn't table to set more thing as a lot of HDMI CEC fonctionality are not impremented (Thomson TV)
+* Support of HDMI CEC partially working. Actually the GamingPi can start the TV but I wasn't able to set more things as a lot of HDMI CEC fonctionality are not implemented on my TV (Thomson TV)
 * Every Logo can be modified in /var/www/launcher
 * Launcher interface should be responsive. It has been tested with 16/9 1080p and 4k.
 
