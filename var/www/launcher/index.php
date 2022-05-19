@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="index.css">
 </head>
 <script>
+        <!-- Defaults app functions -->
         function LaunchSteamlink(){
                 window.location='app://steamlink';
         }
@@ -17,6 +18,7 @@
         function LaunchKodi(){
                 window.location='app://kodi';
         }
+        <!-- Defaults system functions -->
         function SystemReboot(){
                 window.location='app://reboot';
         }
@@ -29,7 +31,8 @@
 <div id="overlay"></div>
 
 <div tabindex="0" id="MainDiv">
-        <!-- il you want to disable an icon on the launcherjust comment the matching block -->
+        <!-- if you want to disable an app on the launcher just comment the matching block -->
+        <!-- if you want to add an app on the launcher just duplicate on of these block and add change the onclic action and the image source -->
         <!-- Block Steamlink -->
         <div class="LogoDiv">
                 <div class="LogoDivDynamic">
